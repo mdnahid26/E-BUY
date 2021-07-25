@@ -110,33 +110,61 @@ select{
     color: #ddd;
     padding-left: 30px;
 }
+.navbar #main_manu{
+    position: relative;
+}
+.navbar #main_manu .search_optipn{
+    position: absolute;
+    right: 0;
+}
 .navbar .search_optipn .search_box{
-   
-    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #111;
+    border-radius: 25px;
+    transition: all linear .3s;
+    margin-right: 10px;
+}
+.navbar .search_optipn .search_box:hover{
+    width: 200px;
 }
 .navbar .search_optipn .search_box input{
+    width: 100%;
+    height: 100%;
     border:none;
-    border-radius: 50px;
-    width: calc(100% - 40px);
-    background-color: none;
-    transform:scale(0);
+    background: none;
+    padding: 10px;
+    padding-right: 30px;
 }
-.navbar .search_optipn .search_box:hover input{
-    transform:scale(1);
-    border:1px solid;
+.navbar .search_optipn .search_box i{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    top: 0;
+    text-align: center;
+    line-height:30px;
 }
-.navbar .search_optipn .search_box button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color:none;
-    border: none;
+.navbar .search_optipn .cart_icon{
+    float: left;
 }
 /*header-top css end*/
 
 /*banner css start*/
-#banner .banner_slider{
+#banner {
     position: relative;
+    z-index:999;
+}
+#banner::after{
+    content: '';
+    position: absolute;
+    background-color:#111;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 #banner .banner_slider .banner_arrow{
     position: absolute;
@@ -163,25 +191,13 @@ select{
 #banner .banner_slider .banner_arrow.banner_right{
     transform: translateX(25px);
 }
-#banner .banner_slider::after{
-    content: '';
-    position: absolute;
-    background-color:#111;
-    opacity: .7;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
+
 #banner .banner_slider .bannerf_slider_item{
     height: 600px;
     background-position: center !important;
     background-size: cover !important;
 }
-#banner .banner_slider .bannerf_slider_item .banner_text{
-    z-index: 444;
 
-}
 #banner .banner_slider .bannerf_slider_item .banner_text h2{
     font-size: 70px;
     font-weight: 700;
@@ -262,12 +278,13 @@ select{
 }
 #newest .newest_item  .newest_overly{
     background-color:rgba(0,0,0,0.8);
-    width: 330px;
+    
     text-align: center;
     position: absolute;
     padding-bottom: 30px;
     bottom: 5%;
     left: 15px;
+    right: 15px;
 }
 #newest .newest_item  .newest_overly h3{
     font-size: 36px;
@@ -402,9 +419,7 @@ select{
     line-height: 24px;
     margin-bottom: 10px;
 }
-#offer .offer_des .offer_cont_down .row{
-    margin-left: 0;
-}
+
 #offer .offer_des .offer_cont_down h2{
     font-size: 20px;
     color:var(--dark-color);
@@ -413,6 +428,7 @@ select{
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
+
 #offer .offer_des .offer_cont_down .cont_down_item{
     border: 1px solid #b2b2b2;
     text-align: center;
@@ -425,13 +441,41 @@ select{
     font-size: 20px;
     font-weight: 500;
     text-transform:capitalize;
-    margin-bottom: 10px;
+    
 }
+
 /*offer css end*/
 
 /*leatest css start*/
 #latest{
     padding-top: 90px;
+    position: relative;
+}
+#latest .latest_arrow{
+    position: absolute;
+    color: var(--dark-color);
+    font-size: 20px;
+    left: 50%;
+    z-index: 222;
+    bottom: 0;
+    border: 1px solid var(--dark-color);
+    width:40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+#latest .latest_arrow:hover{
+    background-color:var(--helight-color);
+    color: var(--white-color);
+    border-color: var(--helight-color);
+}
+#latest .latest_arrow.latest_left{
+    transform: translateX(-25px)
+}
+#latest .latest_arrow.latest_right{
+    transform: translateX(25px)
 }
 /*leatest css end*/
 
@@ -447,8 +491,33 @@ select{
     padding-top: 60px;
     padding-bottom: 100px;
     position: relative;
+    z-index: 2;
 }
-
+#testimonial .testimonial_item_container .testimonial_arrow{
+    position: absolute;
+    color: var(--white-color);
+    font-size: 20px;
+    left: 50%;
+    z-index: 222;
+    bottom: -50px;
+    border: 1px solid var(--white-color);
+    width:40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+#testimonial .testimonial_item_container .testimonial_arrow:hover{
+    background-color:var(--helight-color);
+    border-color: var(--helight-color);
+}
+#testimonial .testimonial_item_container .testimonial_arrow.testimonial_left{
+    transform: translateX(-25px);
+}
+#testimonial .testimonial_item_container .testimonial_arrow.testimonial_right{
+    transform: translateX(25px);
+}
 #testimonial .testimonial_item_container::after{
     content:'';
     position: absolute;
@@ -457,9 +526,9 @@ select{
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,0.8);
-    z-index: -1;
-    
+    z-index: -1;  
 }
+
 #testimonial .testimonial_item_container .testimonial_item .test_img{
     z-index: 2;
 }
@@ -521,7 +590,10 @@ select{
     color:var(--dark-color);
     text-transform: uppercase;
     text-decoration: none;
-    
+    transition: all ease .3s;
+}
+#blog .blog_item .blog_item_text a:hover{
+    color: var(--helight-color);
 }
 /*blog css end*/
 
@@ -532,6 +604,9 @@ select{
 #footer .footer_bg{
     background-color: #353535;
     padding: 50px 0 40px;
+}
+#footer .footer_bg a{
+    display: inline-block;
 }
 #footer .footer_bg  h2{
     font-size: 16px;
@@ -613,5 +688,29 @@ select{
 
 }
 /*footer css end*/
+
+/*footer_bottom css start*/
+#footer_bottom{
+    background-color:#555;
+    padding: 20px 0;
+}
+#footer_bottom .footer_btm_text p{
+    font-size: 14px;
+    font-family: var(--secondary-font);
+    color: var(--white-color);
+    padding-top: 5px;
+}
+#footer_bottom .footer_btm_text p a{
+    text-decoration: none;
+    color: var(--helight-color);
+}
+#footer_bottom .footer_btm_img img{
+    display:inline-block;
+    width:40px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+/*footer_bottom css end*/
 
 
