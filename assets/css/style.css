@@ -145,9 +145,6 @@ select{
     text-align: center;
     line-height:30px;
 }
-.navbar .search_optipn .cart_icon{
-    float: left;
-}
 /*header-top css end*/
 
 /*banner css start*/
@@ -193,7 +190,7 @@ select{
 }
 
 #banner .banner_slider .bannerf_slider_item{
-    height: 600px;
+    height: 566px;
     background-position: center !important;
     background-size: cover !important;
 }
