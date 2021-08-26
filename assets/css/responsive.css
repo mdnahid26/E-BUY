@@ -100,4 +100,7 @@
         text-align: center;
         line-height:30px;
     }
+    #featured .featured_filter_container{
+        justify-content: center;
+    }
 }
