@@ -13,7 +13,7 @@
 }
 
 @media(min-width:768px) and (max-width:991.98px){
-    .product_item_overly {
+    /*.product_item_overly {
         background-color: rgba(0,0,0,0.8);
         text-align: center;
         padding: 30px 0;
@@ -35,7 +35,7 @@
         color: var(--white-color);
         display: inline-block;
         transition: all linear .3s;
-    }
+    }*/
 }
 
 @media(min-width:576px) and (max-width:767.98px){
